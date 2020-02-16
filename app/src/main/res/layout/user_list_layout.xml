@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+>
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+      >
+
+
+      <TextView
+          android:layout_width="100dp"
+          android:layout_height="wrap_content"
+          android:padding="3dp"
+          android:text="User Name"
+          android:textColor="#E2B326"
+          android:textSize="16dp" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/txtUsername"
+          android:text="25/01/2019"
+          android:padding="3dp"
+          android:textColor="#E2B326"
+          android:textSize="18dp"
+          />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+       >
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Address"
+            android:textColor="#E2B326"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="3dp"
+            android:id="@+id/txtUserAddress"
+            android:text="99900023322"
+            android:textColor="#E2B326"
+            android:textSize="18dp" />
+
+
+    </LinearLayout>
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="2dp"-->
+<!--        android:background="#000"-->
+<!--        android:layout_marginLeft="10dp">-->
+
+<!--    </View>-->
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
