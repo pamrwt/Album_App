@@ -1,6 +1,7 @@
 package no.pamir.pamirnewproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,9 +24,10 @@ RecyclerView listPhotos;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photos);
 
-        listPhotos=findViewById(R.id.listAlbums);
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(PhotosActivity.this);
-        listPhotos.setLayoutManager(mLayoutManager);
+        listPhotos=findViewById(R.id.listPhotos);
+        listPhotos.setLayoutManager(new GridLayoutManager(this, 2));
+//        LinearLayoutManager mLayoutManager = new LinearLayoutManager(PhotosActivity.this);
+//        listPhotos.setLayoutManager(mLayoutManager);
 
         photoArrayList=responseAll.body().getUsers().get(userID).getAlbumList().get(albumID).getPhotos();
         Log.e("albumLists ",photoArrayList.get(0).getPhotoName()+",userID"+userID);

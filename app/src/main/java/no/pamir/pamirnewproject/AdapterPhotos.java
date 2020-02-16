@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,18 +30,21 @@ public class AdapterPhotos extends RecyclerView.Adapter<AdapterPhotos.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView txtUserAddress,txtUsername;
+        ImageView imageView;
         public MyViewHolder(View view) {
             super(view);
 
             this.txtUsername = view.findViewById(R.id.txtUsername);
             this.txtUserAddress = view.findViewById(R.id.txtUserAddress);
+            imageView = view.findViewById(R.id.img);
+
         }
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View row = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.album_list_layout, parent, false);
+                .inflate(R.layout.photos_list_layout, parent, false);
         MyViewHolder holder = new MyViewHolder(row);
         return holder;
     }
@@ -50,6 +56,9 @@ public class AdapterPhotos extends RecyclerView.Adapter<AdapterPhotos.MyViewHold
         Photo orderDetail=new Photo();
         orderDetail=arr.get(position);
         holder.txtUsername.setText(orderDetail.getPhotoName());
+
+        Glide.with(context).load(arr.get(position).getPhotoURL()).into(holder.imageView);
+
     }
 
     @Override
